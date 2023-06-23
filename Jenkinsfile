@@ -32,8 +32,7 @@ pipeline {
   }
   post {
     success {
-      def buildNumber = env.BUILD_NUMBER
-      slackSend(color: 'good', message: "Build finished successfully :white_check_mark:\nBuild number: ${BUILD_NUMBER}\nBuild URL: ${env.BUILD_URL}\nConsole Output: ${env.BUILD_URL}console\nChanges: ${env.CHANGE_URL}")
+      slackSend(color: 'good', message: "Build finished successfully :white_check_mark:\nBuild number: ${env.BUILD_NUMBER}\nBuild URL: ${env.BUILD_URL}\nConsole Output: ${env.BUILD_URL}console\nChanges: ${env.CHANGE_URL}")
     }
     failure {
       slackSend(color: 'danger', message: 'Build failed :x:')
