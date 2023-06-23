@@ -3,19 +3,19 @@ pipeline {
   stages {
     stage('clone repository') {
       steps {
-        slackSend(color: '#FFFF00', message: 'Clone repository started :cloud:')
+        slackSend(color: '#FFFF00', message: ':cloud: Clone repository started :arrow_double_down:')
         git 'https://github.com/MungaiVic/gallery'
       }
     }
     stage('Install project dependancies') {
       steps {
-        slackSend(color: 'good', message: 'Install project dependancies started :gear: :petri_dish:')
+        slackSend(color: 'good', message: ':gear: Install project dependancies started.')
             sh 'npm install'
       }
     }
     stage('Tests') {
       steps {
-        slackSend(color: 'good', message: 'Tests started :test_tube:')
+        slackSend(color: 'good', message: ':test_tube: Tests started :petri_dish:')
             sh 'npm test'
       }
     }
