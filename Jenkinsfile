@@ -30,7 +30,7 @@ pipeline {
   }
   post {
     success {
-      slackSend(color: 'good', message: "Build finished successfully :white_check_mark:\nBuild number: ${env.BUILD_NUMBER}\nBuild URL: ${env.BUILD_URL}\nConsole Output: ${env.BUILD_URL}console\n\nAccess the deployed app here: https://sleepy-cove-05135-3cbe5253b7c2.herokuapp.com/ :globe_with_meridians:")
+      slackSend(color: 'good', message: "Build finished successfully :white_check_mark:\nBuild number: ${env.BUILD_NUMBER}\nBuild URL: ${env.BUILD_URL}\nConsole Output: ${env.BUILD_URL}console\n\nAccess the deployed app here:\n https://sleepy-cove-05135-3cbe5253b7c2.herokuapp.com/ :globe_with_meridians:")
     }
     failure {
       slackSend(color: 'danger', message: "Build ${env.BUILD_NUMBER} failed :x:")
